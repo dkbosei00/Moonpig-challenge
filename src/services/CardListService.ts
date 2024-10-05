@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { Card, Template } from "../interfaces";
 
 export async function getCardList(urls: string[]) {
+    
   // Make parallel requests to fetch cardData and templateData using axios.all
   const [cardData, templateData] = await axios.all(urls.slice(0, 2).map((url) => axios.get(url))) as [AxiosResponse<Card[], any>, AxiosResponse<Template[], any>];
 
@@ -12,6 +13,7 @@ export async function getCardList(urls: string[]) {
 
   // Process the cardData to build a response, mapping over each card's title, id, and pages
   return cardData.data.map(({ title, id, pages }) => {
+
     // Find the templateId of the "Front Cover" from the card's pages
     const { templateId } = pages.find(({ title }) => title === "Front Cover");
 
