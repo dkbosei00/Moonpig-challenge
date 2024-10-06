@@ -1,1 +1,0 @@
-yarn husky add .husky/pre-push "yarn test && yarn build"
