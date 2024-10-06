@@ -9,7 +9,7 @@ const urls: string[] = ["https://moonpig.github.io/tech-test-node-backend/cards.
 "https://moonpig.github.io/tech-test-node-backend/sizes.json"
 ]
 
-router.get('/cards', async (req, res) => {
+router.get('/', async (req, res) => {
     // Endpoint to respond with a list of cards
     
     try {
@@ -22,7 +22,7 @@ router.get('/cards', async (req, res) => {
     }
   })
 
-router.get('/cards/:cardId/:sizeId?', async (req, res) => {
+router.get('/:cardId/:sizeId?', async (req, res) => {
     // Endpoint to respond with card details by ID (with optional size)
 
     // Extract cardId and optional sizeId from the request parameters
