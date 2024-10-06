@@ -4,4 +4,4 @@ import cardRoute from "./routes/cardsRoute";
 export const app = express()
 
 app.set('json spaces', 2);
-app.use("", cardRoute)
+app.use("/cards", cardRoute)
